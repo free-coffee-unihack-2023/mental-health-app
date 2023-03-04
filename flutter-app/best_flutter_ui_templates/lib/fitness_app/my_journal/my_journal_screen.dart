@@ -226,7 +226,7 @@ class _MyJournalScreenState extends State<MyJournalScreen>
                                     ),
                                   ),
                                   Text(
-                                    '15 May',
+                                    '5 March',
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
                                       fontFamily: FitnessAppTheme.fontName,
