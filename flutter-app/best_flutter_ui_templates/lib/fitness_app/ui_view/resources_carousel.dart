@@ -22,9 +22,9 @@ class _ResourcesCarouselState extends State<ResourcesCarousel> {
 
   List<String> get urls {
     return const [
+      'https://www.helpguide.org/articles/mental-health/building-better-mental-health.htm',
       'https://greatergood.berkeley.edu/article/item/how_journaling_can_help_you_in_hard_times',
       'https://www.nytimes.com/2018/10/25/style/journaling-benefits.html',
-      'https://www.helpguide.org/articles/mental-health/building-better-mental-health.htm',
       'https://www.nimh.nih.gov/health/topics/caring-for-your-mental-health',
       'https://uhs.umich.edu/tenthings',
       'https://www.healthywa.wa.gov.au/Articles/F_I/Good-mental-health-and-wellbeing',
