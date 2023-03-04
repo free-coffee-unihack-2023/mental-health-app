@@ -41,10 +41,10 @@ class MusicAPI(APIView):
                 else:
                     break
 
-            id = sorted_list.iloc[0]
-            title = sorted_list.iloc[1]
-            artist = sorted_list.iloc[2]
-            song_score = sorted_list.iloc[3]
+            id = sorted_list.iloc[index][0]
+            title = sorted_list.iloc[index][1]
+            artist = sorted_list.iloc[index][2]
+            song_score = sorted_list.iloc[index][3]
 
             selected_id = id
             selected_artist = artist
