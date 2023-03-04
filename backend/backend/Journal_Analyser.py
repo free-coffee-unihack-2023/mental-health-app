@@ -6,10 +6,11 @@ import csv
 
 import math
 
-text = 'flower happy, I am depressed and angry'
+text = 'the happiest day ever'
 
 sia = SentimentIntensityAnalyzer()
-sentiment_score = sia.polarity_scores(text)['compound']
+sentiment_score_dict = sia.polarity_scores(text)
+sentiment_score = sentiment_score_dict['compound']
 
 sorted_list = pd.read_csv('Sorted_Database.csv', encoding='latin-1')
 
@@ -39,10 +40,10 @@ while abs(index - high) > 1 and abs(index - low) > 1:
     else:
         break
 
-id = sorted_list.iloc[0]
-title = sorted_list.iloc[1]
-artist = sorted_list.iloc[2]
-song_score = sorted_list.iloc[3]
+id = sorted_list.iloc[index][0]
+title = sorted_list.iloc[index][1]
+artist = sorted_list.iloc[index][2]
+song_score = sorted_list.iloc[index][3]
 
 selected_id = id
 selected_artist = artist
@@ -51,4 +52,15 @@ selected_score = song_score
 
 url = "https://open.spotify.com/track/" + str(selected_id)
 
-print(song_score)
+def rgb_to_hex(r, g, b):
+    return '#{:02x}{:02x}{:02x}'.format(r, g, b)
+
+g = int(sentiment_score_dict['pos'] * 255)
+b = int(sentiment_score_dict['neg'] * 255)
+
+# r is either matching other two colours to make it neutral or 0 to make it vibrant
+r = 10
+if sentiment_score_dict['neu'] > 0.5:
+    r = int(min(255, (g + b) / 2 + 30))
+
+hexcode = rgb_to_hex(r,g,b)
