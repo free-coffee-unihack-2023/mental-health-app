@@ -96,7 +96,7 @@ class _MyJournalScreenState extends State<MyJournalScreen>
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: FitnessAppTheme.background,
+      color: JournalAppTheme.background,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(
@@ -152,13 +152,13 @@ class _MyJournalScreenState extends State<MyJournalScreen>
                     0.0, 30 * (1.0 - topBarAnimation!.value), 0.0),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: FitnessAppTheme.white.withOpacity(topBarOpacity),
+                    color: JournalAppTheme.white.withOpacity(topBarOpacity),
                     borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(32.0),
                     ),
                     boxShadow: <BoxShadow>[
                       BoxShadow(
-                          color: FitnessAppTheme.grey
+                          color: JournalAppTheme.grey
                               .withOpacity(0.4 * topBarOpacity),
                           offset: const Offset(1.1, 1.1),
                           blurRadius: 10.0),
@@ -185,11 +185,11 @@ class _MyJournalScreenState extends State<MyJournalScreen>
                                   'My Journal',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
-                                    fontFamily: FitnessAppTheme.fontName,
+                                    fontFamily: JournalAppTheme.fontName,
                                     fontWeight: FontWeight.w700,
                                     fontSize: 22 + 6 - 6 * topBarOpacity,
                                     letterSpacing: 1.2,
-                                    color: FitnessAppTheme.darkerText,
+                                    color: JournalAppTheme.darkerText,
                                   ),
                                 ),
                               ),
@@ -205,7 +205,7 @@ class _MyJournalScreenState extends State<MyJournalScreen>
                                 child: Center(
                                   child: Icon(
                                     Icons.keyboard_arrow_left,
-                                    color: FitnessAppTheme.grey,
+                                    color: JournalAppTheme.grey,
                                   ),
                                 ),
                               ),
@@ -221,7 +221,7 @@ class _MyJournalScreenState extends State<MyJournalScreen>
                                     padding: const EdgeInsets.only(right: 8),
                                     child: Icon(
                                       Icons.calendar_today,
-                                      color: FitnessAppTheme.grey,
+                                      color: JournalAppTheme.grey,
                                       size: 18,
                                     ),
                                   ),
@@ -229,11 +229,11 @@ class _MyJournalScreenState extends State<MyJournalScreen>
                                     '5 March',
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
-                                      fontFamily: FitnessAppTheme.fontName,
+                                      fontFamily: JournalAppTheme.fontName,
                                       fontWeight: FontWeight.normal,
                                       fontSize: 18,
                                       letterSpacing: -0.2,
-                                      color: FitnessAppTheme.darkerText,
+                                      color: JournalAppTheme.darkerText,
                                     ),
                                   ),
                                 ],
@@ -250,7 +250,7 @@ class _MyJournalScreenState extends State<MyJournalScreen>
                                 child: Center(
                                   child: Icon(
                                     Icons.keyboard_arrow_right,
-                                    color: FitnessAppTheme.grey,
+                                    color: JournalAppTheme.grey,
                                   ),
                                 ),
                               ),

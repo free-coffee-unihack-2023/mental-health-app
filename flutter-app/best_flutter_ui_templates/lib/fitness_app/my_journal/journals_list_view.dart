@@ -145,11 +145,11 @@ class JournalsView extends StatelessWidget {
                               journalsListData!.time,
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontFamily: FitnessAppTheme.fontName,
+                                fontFamily: JournalAppTheme.fontName,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
                                 letterSpacing: 0.2,
-                                color: FitnessAppTheme.white,
+                                color: JournalAppTheme.white,
                               ),
                             ),
                             Expanded(
@@ -164,11 +164,11 @@ class JournalsView extends StatelessWidget {
                                       child: Text(
                                         journalsListData!.text,
                                         style: TextStyle(
-                                          fontFamily: FitnessAppTheme.fontName,
+                                          fontFamily: JournalAppTheme.fontName,
                                           fontWeight: FontWeight.w500,
                                           fontSize: 10,
                                           letterSpacing: 0.2,
-                                          color: FitnessAppTheme.white,
+                                          color: JournalAppTheme.white,
                                           
                                         ),
                                       ),
@@ -184,11 +184,11 @@ class JournalsView extends StatelessWidget {
                                         journalsListData!.song.toString(),
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
-                                          fontFamily: FitnessAppTheme.fontName,
+                                          fontFamily: JournalAppTheme.fontName,
                                           fontWeight: FontWeight.w500,
                                           fontSize: 12,
                                           letterSpacing: 0.2,
-                                          color: FitnessAppTheme.white,
+                                          color: JournalAppTheme.white,
                                         ),
                                       ),
 

@@ -53,11 +53,11 @@ class GlassView extends StatelessWidget {
                                   'Prepare your stomach for lunch with one or two glass of water',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
-                                    fontFamily: FitnessAppTheme.fontName,
+                                    fontFamily: JournalAppTheme.fontName,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14,
                                     letterSpacing: 0.0,
-                                    color: FitnessAppTheme.nearlyDarkBlue
+                                    color: JournalAppTheme.nearlyDarkBlue
                                         .withOpacity(0.6),
                                   ),
                                 ),

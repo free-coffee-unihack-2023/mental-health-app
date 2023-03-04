@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import '../fitness_app_theme.dart';
 
-class RunningView extends StatelessWidget {
+class RecommendedReading extends StatelessWidget {
   final AnimationController? animationController;
   final Animation<double>? animation;
 
-  const RunningView({Key? key, this.animationController, this.animation})
+  const RecommendedReading({Key? key, this.animationController, this.animation})
       : super(key: key);
 
   @override
@@ -30,7 +30,7 @@ class RunningView extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 16, bottom: 16),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: FitnessAppTheme.white,
+                            color: JournalAppTheme.white,
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(8.0),
                                 bottomLeft: Radius.circular(8.0),
@@ -38,7 +38,7 @@ class RunningView extends StatelessWidget {
                                 topRight: Radius.circular(8.0)),
                             boxShadow: <BoxShadow>[
                               BoxShadow(
-                                  color: FitnessAppTheme.grey.withOpacity(0.4),
+                                  color: JournalAppTheme.grey.withOpacity(0.4),
                                   offset: Offset(1.1, 1.1),
                                   blurRadius: 10.0),
                             ],
@@ -46,18 +46,6 @@ class RunningView extends StatelessWidget {
                           child: Stack(
                             alignment: Alignment.topLeft,
                             children: <Widget>[
-                              ClipRRect(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(8.0)),
-                                child: SizedBox(
-                                  height: 74,
-                                  child: AspectRatio(
-                                    aspectRatio: 1.714,
-                                    child: Image.asset(
-                                        "assets/fitness_app/back.png"),
-                                  ),
-                                ),
-                              ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
@@ -65,21 +53,21 @@ class RunningView extends StatelessWidget {
                                     children: <Widget>[
                                       Padding(
                                         padding: const EdgeInsets.only(
-                                          left: 100,
+                                          left: 115,
                                           right: 16,
                                           top: 16,
                                         ),
                                         child: Text(
-                                          "You're doing great!",
+                                          "Journaling for Mental Health",
                                           textAlign: TextAlign.left,
                                           style: TextStyle(
                                             fontFamily:
-                                                FitnessAppTheme.fontName,
+                                                JournalAppTheme.fontName,
                                             fontWeight: FontWeight.w500,
                                             fontSize: 14,
                                             letterSpacing: 0.0,
                                             color:
-                                                FitnessAppTheme.nearlyDarkBlue,
+                                                JournalAppTheme.nearlyDarkBlue,
                                           ),
                                         ),
                                       ),
@@ -87,20 +75,21 @@ class RunningView extends StatelessWidget {
                                   ),
                                   Padding(
                                     padding: const EdgeInsets.only(
-                                      left: 100,
+                                      left: 115,
                                       bottom: 12,
                                       top: 4,
                                       right: 16,
                                     ),
                                     child: Text(
-                                      "Keep it up\nand stick to your plan!",
+                                      "Health Encyclopedia, U. Rochester Medical Center",
+                                      // should link to this website https://www.urmc.rochester.edu/encyclopedia/content.aspx?ContentID=4552&ContentTypeID=1
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                        fontFamily: FitnessAppTheme.fontName,
+                                        fontFamily: JournalAppTheme.fontName,
                                         fontWeight: FontWeight.w500,
                                         fontSize: 10,
                                         letterSpacing: 0.0,
-                                        color: FitnessAppTheme.grey
+                                        color: JournalAppTheme.grey
                                             .withOpacity(0.5),
                                       ),
                                     ),
@@ -117,7 +106,7 @@ class RunningView extends StatelessWidget {
                         child: SizedBox(
                           width: 110,
                           height: 110,
-                          child: Image.asset("assets/fitness_app/runner.png"),
+                          child: Image.asset("assets/fitness_app/book.png"),
                         ),
                       )
                     ],
