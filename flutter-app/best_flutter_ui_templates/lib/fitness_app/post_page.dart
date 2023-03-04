@@ -40,7 +40,7 @@ class _PostPageState extends State<PostPage> {
                       time: '03:12 PM',
                       song: response["song_name"],
                       artist: response["artist"],
-                      songUrl: response["songUrl"],
+                      songUrl: response["url"],
                       text: widget.noteContent.toString(),
                       startColor: '#FE95B6',
                       endColor: '#FF5287',
