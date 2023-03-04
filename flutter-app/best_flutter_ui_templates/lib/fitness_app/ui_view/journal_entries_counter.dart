@@ -39,13 +39,13 @@ class JournalEntriesCounter extends StatelessWidget {
                                 width: 200,
                                 height: 200,
                                 decoration: BoxDecoration(
-                                  color: FitnessAppTheme.white,
+                                  color: JournalAppTheme.white,
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(200.0),
                                   ),
                                   border: new Border.all(
                                       width: 4,
-                                      color: FitnessAppTheme
+                                      color: JournalAppTheme
                                           .nearlyDarkBlue
                                           ),
                                 ),
@@ -60,11 +60,11 @@ class JournalEntriesCounter extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontFamily:
-                                            FitnessAppTheme.fontName,
+                                            JournalAppTheme.fontName,
                                         fontWeight: FontWeight.normal,
                                         fontSize: 36,
                                         letterSpacing: 0.0,
-                                        color: FitnessAppTheme
+                                        color: JournalAppTheme
                                             .nearlyDarkBlue,
                                       ),
                                     ),
@@ -73,11 +73,11 @@ class JournalEntriesCounter extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontFamily:
-                                            FitnessAppTheme.fontName,
+                                            JournalAppTheme.fontName,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 14,
                                         letterSpacing: 0.0,
-                                        color: FitnessAppTheme.grey
+                                        color: JournalAppTheme.grey
                                             .withOpacity(0.5),
                                       ),
                                     ),
