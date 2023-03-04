@@ -1,6 +1,7 @@
 import 'package:best_flutter_ui_templates/fitness_app/ui_view/area_list_view.dart';
 import 'package:best_flutter_ui_templates/fitness_app/ui_view/resource_music.dart';
-import 'package:best_flutter_ui_templates/fitness_app/ui_view/running_view.dart';
+import 'package:best_flutter_ui_templates/fitness_app/ui_view/recommended_reading.dart';
+import 'package:best_flutter_ui_templates/fitness_app/ui_view/resources_carousel.dart';
 import 'package:best_flutter_ui_templates/fitness_app/ui_view/title_view.dart';
 import 'package:best_flutter_ui_templates/fitness_app/ui_view/workout_view.dart';
 import 'package:flutter/material.dart';
@@ -89,8 +90,15 @@ class _TrainingScreenState extends State<ResourcesScreen>
         animationController: widget.animationController!,
       ),
     );
-
-
+    listViews.add(
+      ResourcesCarousel(
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+            parent: widget.animationController!,
+            curve:
+            Interval((1 / count) * 3, 1.0, curve: Curves.fastOutSlowIn))),
+        animationController: widget.animationController!,
+      ),
+    );
   }
 
   Future<bool> getData() async {

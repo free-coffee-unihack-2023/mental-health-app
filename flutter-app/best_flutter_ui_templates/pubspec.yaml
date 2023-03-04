@@ -33,6 +33,8 @@ dependencies:
     intl: ^0.17.0
     animations: ^2.0.3
     http: ^0.13.5
+    carousel_slider: ^4.2.1
+    url_launcher: ^6.1.10
 
 dev_dependencies:
     flutter_test:
