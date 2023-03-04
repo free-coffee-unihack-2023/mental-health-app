@@ -40,9 +40,12 @@ class MusicAPI(APIView):
                     selected_title = title
                     selected_score = song_score
 
+            url = "https://open.spotify.com/track/" + str(selected_id)
+
             result = {"song_name": selected_title,
                       "artist": selected_artist,
-                      "song_id": selected_id}
+                      "url": url,
+                      "score": selected_score}
             
             response = HttpResponse(json.dumps(result), content_type='application/json')
             response['Content-Disposition'] = 'attachment; filename=export.json'
