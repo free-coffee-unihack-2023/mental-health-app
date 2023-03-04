@@ -6,10 +6,11 @@ import csv
 
 import math
 
-text = 'I had an extremely happy day'
+text = 'the happiest day ever'
 
 sia = SentimentIntensityAnalyzer()
-sentiment_score = sia.polarity_scores(text)['compound']
+sentiment_score_dict = sia.polarity_scores(text)
+sentiment_score = sentiment_score_dict['compound']
 
 sorted_list = pd.read_csv('Sorted_Database.csv', encoding='latin-1')
 
@@ -19,17 +20,47 @@ selected_title = ''
 selected_artist = ''
 selected_score = 0
 
-for index, row in sorted_list.iterrows():
-    id = row[0]
-    title = row[1]
-    artist = row[2]
-    song_score = row[3]
+low = 0
+high = len(sorted_list)
 
-    if (math.pow(math.pow(sentiment_score - song_score, 2), 0.5)) < lowest_distance:
-        lowest_distance = sentiment_score - song_score
-        selected_id = id
-        selected_artist = artist
-        selected_title = title
-        selected_score = song_score
+index = int(high / 2)
 
-print(selected_title, selected_score, selected_id)
+while abs(index - high) > 1 and abs(index - low) > 1:
+
+    song_score = sorted_list.iloc[index][3]
+
+    if song_score > sentiment_score:
+        high = index
+        index = int((high + low) / 2)
+
+    elif song_score < sentiment_score:
+        low = index
+        index = int((high + low) / 2)
+
+    else:
+        break
+
+id = sorted_list.iloc[index][0]
+title = sorted_list.iloc[index][1]
+artist = sorted_list.iloc[index][2]
+song_score = sorted_list.iloc[index][3]
+
+selected_id = id
+selected_artist = artist
+selected_title = title
+selected_score = song_score
+
+url = "https://open.spotify.com/track/" + str(selected_id)
+
+def rgb_to_hex(r, g, b):
+    return '#{:02x}{:02x}{:02x}'.format(r, g, b)
+
+g = int(sentiment_score_dict['pos'] * 255)
+b = int(sentiment_score_dict['neg'] * 255)
+
+# r is either matching other two colours to make it neutral or 0 to make it vibrant
+r = 10
+if sentiment_score_dict['neu'] > 0.5:
+    r = int(min(255, (g + b) / 2 + 30))
+
+hexcode = rgb_to_hex(r,g,b)
