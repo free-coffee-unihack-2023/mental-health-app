@@ -57,21 +57,25 @@ class MusicAPI(APIView):
             def rgb_to_hex(r, g, b):
                 return '#{:02x}{:02x}{:02x}'.format(r, g, b)
 
-            g = int(sentiment_score_dict['pos'] * 255)
-            b = int(sentiment_score_dict['neg'] * 255)
+            g1 = int(sentiment_score_dict['pos'] * 255)
+            b1 = int(sentiment_score_dict['neg'] * 255)
 
             # r is either matching other two colours to make it neutral or 0 to make it vibrant
-            r = 10
+            r1 = 10
+            r2 = 60
             if sentiment_score_dict['neu'] > 0.5:
-                r = int(min(255, (g + b) / 2 + 30))
+                r1 = int(min(255, (g1 + b1) / 2 + 25))
+                r2 = int(min(255, (g1 + b1) / 2 - 25))
 
-            hexcode = rgb_to_hex(r,g,b)
+            hexcode1 = rgb_to_hex(r1,g1,b1)
+            hexcode2 = rgb_to_hex(r2,g1,b1)
 
             result = {"song_name": selected_title,
                       "artist": selected_artist,
                       "url": url,
                       "score": selected_score,
-                      "hexcode": hexcode}
+                      "hex_start": hexcode1,
+                      "hex_end": hexcode2}
             
             response = HttpResponse(json.dumps(result), content_type='application/json')
             response['Content-Disposition'] = 'attachment; filename=export.json'
