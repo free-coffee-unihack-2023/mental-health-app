@@ -38,22 +38,3 @@ while abs(index - high) > 1 and abs(index - low) > 1:
 
     else:
         break
-
-# for index, row in sorted_list.iterrows():
-#     song_score = row[3]
-
-#     if (math.pow(math.pow(sentiment_score - song_score, 2), 0.5)) < lowest_distance:
-
-#         id = row[0]
-#         title = row[1]
-#         artist = row[2]
-
-#         lowest_distance = sentiment_score - song_score
-#         selected_id = id
-#         selected_artist = artist
-#         selected_title = title
-#         selected_score = song_score
-
-# url = "https://open.spotify.com/track/" + str(selected_id)
-
-# print(selected_title, selected_score, selected_artist)
