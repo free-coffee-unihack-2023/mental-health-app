@@ -3,71 +3,45 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class WebServiceHelper {
-  final _apiKey;
   final _url;
 
-  WebServiceHelper(this._url, this._apiKey);
+  WebServiceHelper(this._url);
 
-  Future getData(String acceptHeader) async {
-    http.Response response = await http.get(
-      this._url,
-      headers: {
-        HttpHeaders.acceptHeader: acceptHeader,
-        HttpHeaders.authorizationHeader: this._apiKey,
-      },
-    );
+  Future getData() async {
+    http.Response response = await http.get(this._url);
     return _responseHandler(response);
   }
 
-  Future postData(
-      Map requestBody, String acceptHeader, String contentType) async {
+  Future postData(Map requestBody) async {
     http.Response response = await http.post(
       this._url,
-      headers: {
-        HttpHeaders.acceptHeader: acceptHeader,
-        HttpHeaders.authorizationHeader: this._apiKey,
-        HttpHeaders.contentTypeHeader: contentType
-      },
+      headers: {'Content-Type': 'application/json; charset=UTF-8'},
       body: jsonEncode(requestBody),
     );
     return _responseHandler(response);
   }
 
-  Future putData(
-      Map requestBody, String acceptHeader, String contentType) async {
+  Future putData(Map requestBody) async {
     http.Response response = await http.put(
       this._url,
-      headers: {
-        HttpHeaders.acceptHeader: acceptHeader,
-        HttpHeaders.authorizationHeader: this._apiKey,
-        HttpHeaders.contentTypeHeader: contentType
-      },
+      headers: {'Content-Type': 'application/json; charset=UTF-8'},
       body: jsonEncode(requestBody),
     );
     return _responseHandler(response);
   }
 
-  Future patchData(
-      Map requestBody, String acceptHeader, String contentType) async {
+  Future patchData(Map requestBody) async {
     http.Response response = await http.patch(
       this._url,
-      headers: {
-        HttpHeaders.acceptHeader: acceptHeader,
-        HttpHeaders.authorizationHeader: this._apiKey,
-        HttpHeaders.contentTypeHeader: contentType
-      },
+      headers: {'Content-Type': 'application/json; charset=UTF-8'},
       body: jsonEncode(requestBody),
     );
     return _responseHandler(response);
   }
 
-  Future deleteData(String acceptHeader) async {
+  Future deleteData() async {
     http.Response response = await http.delete(
       this._url,
-      headers: {
-        HttpHeaders.acceptHeader: acceptHeader,
-        HttpHeaders.authorizationHeader: this._apiKey,
-      },
     );
     return _responseHandler(response);
   }
