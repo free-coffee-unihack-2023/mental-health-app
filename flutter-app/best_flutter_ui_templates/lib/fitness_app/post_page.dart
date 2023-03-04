@@ -35,11 +35,10 @@ class _PostPageState extends State<PostPage> {
               print("Begin");
               var wsh = WebServiceHelper(Uri.parse("http://10.0.2.2:8000/mhapi/music"));
               wsh.postData({"text": widget.noteContent.toString()}).then((response) {
-                print(response);
                 JournalEntriesData.journalEntriesData.add(
                     JournalEntriesData(
                       time: '03:12 PM',
-                      song: response["song"],
+                      song: response["song_name"],
                       artist: response["artist"],
                       songUrl: response["songUrl"],
                       text: widget.noteContent.toString(),
