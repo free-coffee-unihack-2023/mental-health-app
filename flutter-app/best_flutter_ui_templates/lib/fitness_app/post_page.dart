@@ -1,5 +1,6 @@
 import 'package:best_flutter_ui_templates/fitness_app/fitness_app_theme.dart';
 import 'package:best_flutter_ui_templates/fitness_app/models/journal_entries_data.dart';
+import 'package:best_flutter_ui_templates/middleware/webservice_helper.dart';
 import 'package:flutter/material.dart';
 
 class PostPage extends StatefulWidget {
@@ -31,17 +32,23 @@ class _PostPageState extends State<PostPage> {
         actions: [
           IconButton(
             onPressed: () {
-              // TODO: implement save note
-              JournalEntriesData.journalEntriesData.add(
-                  JournalEntriesData(
-                    time: '03:12 PM',
-                    song: 'Arise',
-                    songUrl: 'https://open.spotify.com/track/2aaClnypAakdAmLw74JXxB',
-                    text: 'fewifskdfn',
-                    startColor: '#0a00a2',
-                    endColor: '#0a00a2',
-                  )
-              );
+              print("Begin");
+              var wsh = WebServiceHelper(Uri.parse("http://10.0.2.2:8000/mhapi/music"));
+              wsh.postData({"text": widget.noteContent.toString()}).then((response) {
+                print(response);
+                JournalEntriesData.journalEntriesData.add(
+                    JournalEntriesData(
+                      time: '03:12 PM',
+                      song: response["song"],
+                      artist: response["artist"],
+                      songUrl: response["songUrl"],
+                      text: widget.noteContent.toString(),
+                      startColor: '#FE95B6',
+                      endColor: '#FF5287',
+                    )
+                );
+                Navigator.pop(context);
+              });
             },
             icon: Icon(Icons.save),
           ),
