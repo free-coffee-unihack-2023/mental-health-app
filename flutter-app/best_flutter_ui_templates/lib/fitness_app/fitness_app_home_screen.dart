@@ -77,7 +77,6 @@ class _FitnessAppHomeScreenState extends State<FitnessAppHomeScreen>
         ),
         BottomBarView(
           tabIconsList: tabIconsList,
-          addClick: () {},
           changeIndex: (int index) {
             if (index == 0 || index == 2) {
               animationController?.reverse().then<dynamic>((data) {

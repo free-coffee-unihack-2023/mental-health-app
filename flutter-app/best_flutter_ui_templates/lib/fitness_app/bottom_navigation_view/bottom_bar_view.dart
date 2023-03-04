@@ -2,18 +2,17 @@ import 'dart:math' as math;
 import 'package:best_flutter_ui_templates/fitness_app/fitness_app_theme.dart';
 import 'package:best_flutter_ui_templates/fitness_app/models/tabIcon_data.dart';
 import 'package:best_flutter_ui_templates/main.dart';
+import 'package:best_flutter_ui_templates/middleware/webservice_helper.dart';
 import 'package:flutter/material.dart';
 
-import '../../main.dart';
-import '../models/tabIcon_data.dart';
+
 
 class BottomBarView extends StatefulWidget {
   const BottomBarView(
-      {Key? key, this.tabIconsList, this.changeIndex, this.addClick})
+      {Key? key, this.tabIconsList, this.changeIndex})
       : super(key: key);
 
   final Function(int index)? changeIndex;
-  final Function()? addClick;
   final List<TabIconData>? tabIconsList;
   @override
   _BottomBarViewState createState() => _BottomBarViewState();
@@ -165,7 +164,7 @@ class _BottomBarViewState extends State<BottomBarView>
                           splashColor: Colors.white.withOpacity(0.1),
                           highlightColor: Colors.transparent,
                           focusColor: Colors.transparent,
-                          onTap: widget.addClick,
+                          onTap: addClick,
                           child: Icon(
                             Icons.add,
                             color: FitnessAppTheme.white,
@@ -194,6 +193,10 @@ class _BottomBarViewState extends State<BottomBarView>
         }
       });
     });
+  }
+
+  void addClick() {
+    print("Test");
   }
 }
 
