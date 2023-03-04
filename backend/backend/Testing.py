@@ -6,8 +6,10 @@
 import pandas as pd
 import csv
 
+songs_count = 10000
+
 songs = pd.read_csv('Song_Database.csv')
-database = songs[:10000]
+database = songs[:songs_count]
 
 trained_database = []
 
