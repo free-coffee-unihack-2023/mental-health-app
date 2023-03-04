@@ -1,4 +1,5 @@
 import 'package:best_flutter_ui_templates/fitness_app/fitness_app_theme.dart';
+import 'package:best_flutter_ui_templates/fitness_app/models/journal_entries_data.dart';
 import 'package:best_flutter_ui_templates/main.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
@@ -55,7 +56,7 @@ class JournalEntriesCounter extends StatelessWidget {
                                       CrossAxisAlignment.center,
                                   children: <Widget>[
                                     Text(
-                                      '${(0 * animation!.value).toInt()}',
+                                      '${(JournalEntriesData.journalEntriesData.length * animation!.value).toInt()}',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         fontFamily:
