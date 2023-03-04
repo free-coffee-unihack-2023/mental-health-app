@@ -9,6 +9,7 @@ from nltk.sentiment import SentimentIntensityAnalyzer
 
 import pandas as pd
 import csv
+import math
 
 class MusicAPI(APIView):
      def post(self, request, *args, **kwargs):
@@ -24,6 +25,7 @@ class MusicAPI(APIView):
             selected_id = ''
             selected_title = ''
             selected_artist = ''
+            selected_score = 0
 
             for index, row in sorted_list.iterrows():
                 id = row[0]
@@ -31,15 +33,16 @@ class MusicAPI(APIView):
                 artist = row[2]
                 song_score = row[3]
 
-                if (sentiment_score - song_score) < lowest_distance:
+                if (math.pow(math.pow(sentiment_score - song_score, 2), 0.5)) < lowest_distance:
                     lowest_distance = sentiment_score - song_score
                     selected_id = id
                     selected_artist = artist
                     selected_title = title
+                    selected_score = song_score
 
             result = {"song_name": selected_title,
                       "artist": selected_artist,
-                      "song_id": id}
+                      "song_id": selected_id}
             
             response = HttpResponse(json.dumps(result), content_type='application/json')
             response['Content-Disposition'] = 'attachment; filename=export.json'
