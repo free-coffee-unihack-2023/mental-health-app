@@ -42,8 +42,8 @@ class _PostPageState extends State<PostPage> {
                       artist: response["artist"],
                       songUrl: response["url"],
                       text: widget.noteContent.toString(),
-                      startColor: '#FE95B6',
-                      endColor: '#FF5287',
+                      startColor: response["hex_start"],
+                      endColor: response["hex_end"],
                     )
                 );
                 Navigator.pop(context);
