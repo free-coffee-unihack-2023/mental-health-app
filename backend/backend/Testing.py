@@ -12,3 +12,10 @@ while results['next']:
 
 for album in albums:
     print(album['name'])
+    
+#client id
+
+cid = 'dffd2e06079846219e33b2c574e8d893'
+secret = '3c87d80ec99d4ca88e9df68bd8821d50'
+client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
+sp = spotipy.Spotify(client_credentials_manager = client_credentials_manager)
