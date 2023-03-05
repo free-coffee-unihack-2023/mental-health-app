@@ -3,18 +3,18 @@ import 'package:flutter_link_previewer/flutter_link_previewer.dart';
 import 'package:flutter_chat_types/flutter_chat_types.dart' show PreviewData;
 import 'package:url_launcher/url_launcher.dart';
 
-class ResourcesCarousel extends StatefulWidget {
+class ResourcesCarousel_2 extends StatefulWidget {
   final AnimationController? animationController;
   final Animation<double>? animation;
 
-  ResourcesCarousel({Key? key, this.animationController, this.animation})
+  ResourcesCarousel_2({Key? key, this.animationController, this.animation})
       : super(key: key);
 
   @override
-  _ResourcesCarouselState createState() => _ResourcesCarouselState();
+  _ResourcesCarousel_2State createState() => _ResourcesCarousel_2State();
 }
 
-class _ResourcesCarouselState extends State<ResourcesCarousel> {
+class _ResourcesCarousel_2State extends State<ResourcesCarousel_2> {
 
   Map<String, PreviewData> datas = {};
   final String article =
@@ -22,12 +22,12 @@ class _ResourcesCarouselState extends State<ResourcesCarousel> {
 
   List<String> get urls {
     return const [
-      'https://www.helpguide.org/articles/mental-health/building-better-mental-health.htm',
-      'https://greatergood.berkeley.edu/article/item/how_journaling_can_help_you_in_hard_times',
-      'https://www.nytimes.com/2018/10/25/style/journaling-benefits.html',
-      'https://www.nimh.nih.gov/health/topics/caring-for-your-mental-health',
-      'https://uhs.umich.edu/tenthings',
-      'https://www.healthywa.wa.gov.au/Articles/F_I/Good-mental-health-and-wellbeing',
+      'https://www.headspace.com/sleep/how-to-sleep-better',
+      'https://www.webmd.com/sleep-disorders/ss/slideshow-sleep-tips',
+      'https://www.cdc.gov/sleep/about_sleep/sleep_hygiene.html',
+      'https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/sleep/art-20048379',
+      'https://healthysleep.med.harvard.edu/healthy/getting/overcoming/tips',
+      'https://www.nhs.uk/every-mind-matters/coronavirus/how-to-fall-asleep-faster-and-sleep-better/',
     ];
   }
 
@@ -35,7 +35,7 @@ class _ResourcesCarouselState extends State<ResourcesCarousel> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 400.0,
+      height: 500.0,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, int index) {

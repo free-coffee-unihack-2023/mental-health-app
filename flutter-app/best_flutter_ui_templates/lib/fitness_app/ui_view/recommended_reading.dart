@@ -81,8 +81,7 @@ class RecommendedReading extends StatelessWidget {
                                       right: 16,
                                     ),
                                     child: Text(
-                                      "Health Encyclopedia, U. Rochester Medical Center",
-                                      // should link to this website https://www.urmc.rochester.edu/encyclopedia/content.aspx?ContentID=4552&ContentTypeID=1
+                                      "",
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
                                         fontFamily: JournalAppTheme.fontName,

@@ -1,7 +1,8 @@
 import 'package:best_flutter_ui_templates/fitness_app/ui_view/area_list_view.dart';
 import 'package:best_flutter_ui_templates/fitness_app/ui_view/resource_music.dart';
 import 'package:best_flutter_ui_templates/fitness_app/ui_view/recommended_reading.dart';
-import 'package:best_flutter_ui_templates/fitness_app/ui_view/resources_carousel.dart';
+import 'package:best_flutter_ui_templates/fitness_app/ui_view/resources_carousel_1.dart';
+import 'package:best_flutter_ui_templates/fitness_app/ui_view/resources_carousel_2.dart';
 import 'package:best_flutter_ui_templates/fitness_app/ui_view/title_view.dart';
 import 'package:best_flutter_ui_templates/fitness_app/ui_view/workout_view.dart';
 import 'package:flutter/material.dart';
@@ -60,27 +61,15 @@ class _TrainingScreenState extends State<ResourcesScreen>
   void addAllListData() {
     const int count = 5;
 
-    listViews.add(
-      TitleView(
-        titleTxt: 'Resources for you',
-        subTxt: 'Details',
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve:
-            Interval((1 / count) * 0, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
-    );
-
-    listViews.add(
-      ResourceMusic(
-        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-            parent: widget.animationController!,
-            curve:
-            Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
-        animationController: widget.animationController!,
-      ),
-    );
+    // listViews.add(
+    //   ResourceMusic(
+    //     animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+    //         parent: widget.animationController!,
+    //         curve:
+    //         Interval((1 / count) * 2, 1.0, curve: Curves.fastOutSlowIn))),
+    //     animationController: widget.animationController!,
+    //   ),
+    // );
     listViews.add(
       RecommendedReading(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
@@ -91,7 +80,28 @@ class _TrainingScreenState extends State<ResourcesScreen>
       ),
     );
     listViews.add(
-      ResourcesCarousel(
+      ResourcesCarousel_1(
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+            parent: widget.animationController!,
+            curve:
+            Interval((1 / count) * 3, 1.0, curve: Curves.fastOutSlowIn))),
+        animationController: widget.animationController!,
+      ),
+    );
+    listViews.add(
+      TitleView(
+        titleTxt: 'Improve your sleep',
+        subTxt: 'See more',
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+            parent: widget.animationController!,
+            curve:
+            Interval((1 / count) * 0, 1.0, curve: Curves.fastOutSlowIn))),
+        animationController: widget.animationController!,
+      ),
+    );
+
+    listViews.add(
+      ResourcesCarousel_2(
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
             parent: widget.animationController!,
             curve:
