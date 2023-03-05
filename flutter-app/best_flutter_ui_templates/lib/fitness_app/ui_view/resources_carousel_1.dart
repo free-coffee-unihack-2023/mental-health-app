@@ -41,8 +41,8 @@ class _ResourcesCarousel_1State extends State<ResourcesCarousel_1> {
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {
-              // Handle link click
-            },
+              launchUrl(Uri.parse(urls[index]));
+              },
             child: Card(
               child: Column(
                 children: <Widget>[

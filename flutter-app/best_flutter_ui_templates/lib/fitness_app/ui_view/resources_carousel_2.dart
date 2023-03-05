@@ -41,7 +41,7 @@ class _ResourcesCarousel_2State extends State<ResourcesCarousel_2> {
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
             onTap: () {
-              // Handle link click
+              launchUrl(Uri.parse(urls[index]));
             },
             child: Card(
               child: Column(
