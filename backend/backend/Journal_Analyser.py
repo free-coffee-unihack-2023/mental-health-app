@@ -68,4 +68,30 @@ if sentiment_score_dict['neu'] > 0.5:
 hexcode1 = rgb_to_hex(r1,g1,b1)
 hexcode2 = rgb_to_hex(r2,g1,b1)
 
-print(hexcode1)
+# print(hexcode1, hexcode2)
+
+from datetime import *
+
+hour = datetime.now().hour
+minute = datetime.now().minute
+
+type = "AM"
+
+if 24 > hour > 11:
+    type = "PM"
+
+hour = hour % 12
+
+if hour == 0:
+    hour += 12
+
+minute_string = ""
+
+if minute < 10:
+    minute_string += "0"
+
+minute_string += str(minute)
+
+return_time = str(hour) + ":" + str(minute_string) + " " + type
+
+print(return_time)

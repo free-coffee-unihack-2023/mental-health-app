@@ -11,6 +11,9 @@ import pandas as pd
 import csv
 import math
 
+from datetime import *
+
+
 class MusicAPI(APIView):
      def post(self, request, *args, **kwargs):
         text = request.data.get('text')
@@ -70,13 +73,36 @@ class MusicAPI(APIView):
             hexcode1 = rgb_to_hex(r1,g1,b1)
             hexcode2 = rgb_to_hex(r2,g1,b1)
 
+            hour = datetime.now().hour
+            minute = datetime.now().minute
+
+            type = "AM"
+
+            if 24 > hour > 11:
+                type = "PM"
+
+            hour = hour % 12
+
+            if hour == 0:
+                hour += 12
+
+            minute_string = ""
+
+            if minute < 10:
+                minute_string += "0"
+
+            minute_string += str(minute)
+
+            return_time = str(hour) + ":" + str(minute_string) + " " + type
+
             result = {"song_name": selected_title,
                       "artist": selected_artist,
                       "url": url,
                       "score": selected_score,
                       "hex_start": hexcode1,
-                      "hex_end": hexcode2}
-            
+                      "hex_end": hexcode2,
+                      "time": return_time}
+
             response = HttpResponse(json.dumps(result), content_type='application/json')
             response['Content-Disposition'] = 'attachment; filename=export.json'
             return response
