@@ -47,15 +47,15 @@
             android:name="flutterEmbedding"
             android:value="2" />
 
-        <!-- Deep linking -->
-        <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
-        <intent-filter android:autoVerify="true">
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.DEFAULT" />
-            <category android:name="android.intent.category.BROWSABLE" />
-            <data android:scheme="http" android:host="google.com" />
-            <data android:scheme="https" />
-        </intent-filter>
+<!--        &lt;!&ndash; Deep linking &ndash;&gt;-->
+<!--        <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />-->
+<!--        <intent-filter android:autoVerify="true">-->
+<!--            <action android:name="android.intent.action.VIEW" />-->
+<!--            <category android:name="android.intent.category.DEFAULT" />-->
+<!--            <category android:name="android.intent.category.BROWSABLE" />-->
+<!--            <data android:scheme="http" android:host="google.com" />-->
+<!--            <data android:scheme="https" />-->
+<!--        </intent-filter>-->
 
     </application>
 </manifest>
